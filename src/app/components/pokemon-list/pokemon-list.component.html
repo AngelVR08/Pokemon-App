@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Favorito</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of pokemons; let i = index">
+      <td (click)="navigateToDetails(i + 1)">{{ pokemon.name | replaceLetters }}</td>
+      <td>
+        <button (click)="toggleFavorite(i)">
+          {{ isFavorite(i) ? 'Quitar de Favoritos' : 'Añadir a Favoritos' }}
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
